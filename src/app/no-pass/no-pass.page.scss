@@ -1,0 +1,33 @@
+#recoveryBox {
+    padding: 32px;
+}
+
+ion-card {
+    padding: 16px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+ion-card>* {
+    margin-top: 16px
+}
+
+ion-button {
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    min-height: 80px;
+}
+
+ion-item {
+    min-height: 50px;
+    width: 100%;
+}
+
+ion-nav-link {
+    text-decoration: underline;
+    color: blue;
+}

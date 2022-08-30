@@ -6,7 +6,7 @@
 
 <ion-content>
   <form [formGroup]="usuario">
-    <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+    <div id="loginBox">
       <ion-card class="ion-text-center">
         <br><br>
         <ion-item>
@@ -16,7 +16,6 @@
             </ion-label>
             <div>
               <ion-input type="text" formControlName="user"></ion-input>
-              <!-- <ion-input type="text"></ion-input> -->
             </div>
           </div>
 
@@ -29,21 +28,20 @@
             </ion-label>
             <div>
               <ion-input type="password" formControlName="pass"></ion-input>
-              <!-- <ion-input type="password"></ion-input> -->
             </div>
           </div>
         </ion-item>
         <div>
-          <ion-button expand="full" type="submit" [disabled]="!usuario.valid" (click)="goToPagina2()"
+          <ion-button expand="block" type="submit" [disabled]="!usuario.valid" (click)="goToPagina2()"
             routerDirection="forward">Ingresar</ion-button>
         </div>
 
 
         <br><br>
         <div>
-          <ion-label>
+          <ion-nav-link (click)="goToNoPass()" routerDirection="forward">
             Olvide mi contraseña
-          </ion-label>
+          </ion-nav-link>
         </div>
         <br><br>
 

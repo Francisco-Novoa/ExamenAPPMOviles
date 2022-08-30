@@ -30,23 +30,24 @@ export class HomePage {
   camaraAnimation() {
     const animation = createAnimation()
       .addElement(document.querySelector('#cuadrado'))
-
       .duration(1000)
       .keyframes([
         { offset: 0, background: 'red' },
         { offset: 0, transform: 'scale(1)', opacity: '1' },
         { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
         { offset: 1, transform: 'scale(1)', opacity: '1' }
-      ]);
+      ])
     animation.play();
   }
   cerrarAnimation() {
     const animation = createAnimation()
       .addElement(document.querySelector('#cuadrado2'))
-
       .duration(1000)
       .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-      .fromTo('opacity', '1', '0.2');
+      .fromTo('opacity', '1', '0.2')
+      .duration(1000)
+      .fromTo('transform', 'translateX(100px)', 'translateX(0px)')
+      .fromTo('opacity', '0.2', '1');
     animation.play();
     this.router.navigate(['/login'])
 

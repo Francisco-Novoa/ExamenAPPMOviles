@@ -16,13 +16,20 @@ export class LoginPage {
   });
 
 
-  constructor(private navCtrl: NavController, private router: Router, private alertController: AlertController, private animationCtrl: AnimationController) { }
+  constructor(private navCtrl: NavController,
+    private router: Router,
+    private alertController: AlertController,
+    private animationCtrl: AnimationController) { }
 
   sendDetailsWithState() {
     let navigationExtras: NavigationExtras = {
-      state: { user: this.usuario.value.user }
+      state: { user: this.usuario.value.user || "" }
     };
     this.router.navigate(['/home'], navigationExtras); // Esta linea es la que me permite navegar a otro page 
+  }
+
+  toChangePass() {
+    this.router.navigate(['/no-pass']); // Esta linea es la que me permite navegar a otro page 
   }
 
   //Metodo de alerta 
@@ -38,14 +45,15 @@ export class LoginPage {
 
   //Metodo para navegar desde un metodo llamado desde el html
   goToPagina2() {
-    console.log("entramos al metodo");
     if (3 < (this.usuario.value.user).length) {
       this.sendDetailsWithState();
     } else {
       this.presentAlert();
     }
-    // this.navCtrl.navigateForward('/home');
   }
 
 
+  goToNoPass() {
+    this.toChangePass();
+  }
 }

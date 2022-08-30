@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title id="titulo">Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="recovery">
+    <div id="recoveryBox">
+      <div class="message">
+        <p>Para recuperar tu contraseña ingresa tu usuario. </p>
+        <p>Te enviaremos un link donde podras cambiar tu contraseña</p>
+      </div>
+      <ion-nav-link (click)="toLogin()" routerDirection="forward">
+        ← Atras
+      </ion-nav-link>
+      <ion-card class="ion-text-center">
+        <ion-item>
+          <div>
+            <ion-label>
+              Usuario
+            </ion-label>
+            <div>
+              <ion-input type="text" placeholder="usuario@duocuc.cl" formControlName="user"></ion-input>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-button expand="block">Enviar</ion-button>
+        </ion-item>
+      </ion-card>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer class="ion-text-center" collapse="fade">
+  <ion-toolbar>
+    <ion-title size="small">
+      <ion-icon name="logo-linkedin"></ion-icon>
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label> @DuocUC</ion-label>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
