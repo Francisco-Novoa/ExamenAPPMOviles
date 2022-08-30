@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title id="titulo">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="usuario">
+    <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+      <ion-card class="ion-text-center">
+        <br><br>
+        <ion-item>
+          <div>
+            <ion-label>
+              Usuario
+            </ion-label>
+            <div>
+              <ion-input type="text" formControlName="user"></ion-input>
+              <!-- <ion-input type="text"></ion-input> -->
+            </div>
+          </div>
+
+        </ion-item>
+        <ion-item>
+          <div>
+            <!--  -->
+            <ion-label>
+              Contraseña
+            </ion-label>
+            <div>
+              <ion-input type="password" formControlName="pass"></ion-input>
+              <!-- <ion-input type="password"></ion-input> -->
+            </div>
+          </div>
+        </ion-item>
+        <div>
+          <ion-button expand="full" type="submit" [disabled]="!usuario.valid" (click)="goToPagina2()"
+            routerDirection="forward">Ingresar</ion-button>
+        </div>
+
+
+        <br><br>
+        <div>
+          <ion-label>
+            Olvide mi contraseña
+          </ion-label>
+        </div>
+        <br><br>
+
+
+      </ion-card>
+    </div>
+  </form>
+
+
+</ion-content>
+
+<ion-footer class="ion-text-center" collapse="fade">
+  <ion-toolbar>
+    <ion-title size="small">
+      <ion-icon name="logo-linkedin"></ion-icon>
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label> @DuocUC</ion-label>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
