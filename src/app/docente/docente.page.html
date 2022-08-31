@@ -1,0 +1,141 @@
+<ion-header class="blue">
+  <ion-toolbar>
+    <ion-title id="titulo">Docente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="ion-text-center">
+    <h2>Buenas tardes {{userHome}} </h2>
+  </ion-card>
+
+  
+  <ion-card class="ion-text-center">
+    <ion-card-content id="perfil">
+      <ion-card-title>Perfil</ion-card-title>
+      <div class="names">
+        <ion-card-subtitle>Usuario:</ion-card-subtitle>
+        <ion-card-subtitle>{{userHome}}</ion-card-subtitle>
+      </div>
+      <div class="names">
+        <ion-card-subtitle>Correo:</ion-card-subtitle>
+        <ion-card-subtitle>{{emailUser}}@profesorduocuc.cl</ion-card-subtitle>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+<ion-card>
+  <ion-accordion-group [multiple]="true">
+    <ion-accordion value="lunes">
+      <ion-item slot="header" color="light">
+        <ion-label>Lunes</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-sm>
+              <div>Ingenieria en informatica</div>
+            </ion-col>
+            <ion-col size="12" size-sm>
+              <div>2 of 4</div>
+            </ion-col>
+            <ion-col size="12" size-sm>
+              <div>3 of 4</div>
+            </ion-col>
+            <ion-col size="12" size-sm>
+              <div>4 of 4</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="martes">
+      <ion-item slot="header" color="light">
+        <ion-label>Martes</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Second Content
+      </div>
+    </ion-accordion>
+    <ion-accordion value="miercoles">
+      <ion-item slot="header" color="light">
+        <ion-label>Miercoles</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Third Content
+      </div>
+    </ion-accordion>
+    <ion-accordion value="jueves">
+      <ion-item slot="header" color="light">
+        <ion-label>Jueves</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Third Content
+      </div>
+    </ion-accordion>
+    <ion-accordion value="viernes">
+      <ion-item slot="header" color="light">
+        <ion-label>Viernes</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Third Content
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="sabado">
+      <ion-item slot="header" color="light">
+        <ion-label>Sabado</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Third Content
+      </div>
+    </ion-accordion>
+    
+  </ion-accordion-group>
+</ion-card>
+    
+
+
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+      <ion-card-title>Registra tu asistencia</ion-card-title>
+      <div id="camara">
+        <ion-button expand="full" type="submit" (click)="camaraAnimation()">
+          <div class="square" id="cuadrado" (click)="cuadradoAnimado()">
+            <ion-icon name="camera-outline" style="font-size: 50px;"></ion-icon>
+          </div>
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+      <ion-card-title>Cerrar Cesión</ion-card-title>
+      <div id="cerrarsesion">
+        <ion-button expand="full" type="submit" (click)="cerrarAnimation()">
+          <div class="square2" id="cuadrado2" (click)="cuadradoAnimado()">
+            <ion-icon name="log-out-outline" style="font-size: 50px;"></ion-icon>
+          </div>
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+
+</ion-content>
+
+<ion-footer class="ion-text-center" collapse="fade">
+  <ion-toolbar>
+    <ion-title size="small">
+      <ion-icon name="logo-linkedin"></ion-icon>
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label> @DuocUC</ion-label>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

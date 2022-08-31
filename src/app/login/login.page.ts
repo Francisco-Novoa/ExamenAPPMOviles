@@ -45,7 +45,7 @@ export class LoginPage {
 
   //Metodo para navegar desde un metodo llamado desde el html
   goToPagina2() {
-    if (6 < (this.usuario.value.user).length) {
+    if (6 <= (this.usuario.value.user).length) {
       this.sendDetailsWithState();
     } else {
       this.presentAlert();
