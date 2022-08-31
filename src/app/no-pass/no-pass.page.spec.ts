@@ -9,7 +9,7 @@ describe('NoPassPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoPassPage ],
+      declarations: [NoPassPage],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
