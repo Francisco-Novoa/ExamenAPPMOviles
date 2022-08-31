@@ -13,17 +13,16 @@ import { ActivatedRoute } from "@angular/router";
 export class HomePage {
   nombre: string;
   userHome = "Alumno Duoc";
+  isProfe = false;
   emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
-
-
   constructor(private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
-
-
     this.activeroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.userHome = this.router.getCurrentNavigation().extras.state.user;
+        this.isProfe = this.router.getCurrentNavigation().extras.state.isProfe;
         this.emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
       }
+      console.log(this.isProfe, this.userHome, this.emailUser)
     });
   }
 
@@ -39,6 +38,7 @@ export class HomePage {
       ])
     animation.play();
   }
+
   cerrarAnimation() {
     const animation = createAnimation()
       .addElement(document.querySelector('#cuadrado2'))
@@ -50,11 +50,5 @@ export class HomePage {
       .fromTo('opacity', '0.2', '1');
     animation.play();
     this.router.navigate(['/login'])
-
   }
-
-
-
-
-
 }

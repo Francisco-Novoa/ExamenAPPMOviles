@@ -14,7 +14,6 @@ export class NoPassPage {
     user: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
   });
 
-
   constructor(private navCtrl: NavController,
     private router: Router,
     private alertController: AlertController,
