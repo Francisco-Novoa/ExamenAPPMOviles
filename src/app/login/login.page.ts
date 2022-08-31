@@ -35,8 +35,13 @@ export class LoginPage {
         isProfe: this.isProfe
       }
     };
-    console.log(this.isUsuario, this.isValid, this.isProfe)
-    this.router.navigate(['/home'], navigationExtras); // Esta linea es la que me permite navegar a otro page 
+    console.log(this.isProfe)
+    if (this.isProfe) {
+      console.log("to the profe page")
+      this.router.navigate(['/docente'], navigationExtras);
+    } else {
+      this.router.navigate(['/home'], navigationExtras);
+    }
   }
 
   toChangePass() {
