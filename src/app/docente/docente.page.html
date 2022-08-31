@@ -26,28 +26,32 @@
   </ion-card>
   
 <ion-card>
-  <ion-accordion-group [multiple]="true">
+  <ion-accordion-group expand="inset" [multiple]="true">
     <ion-accordion value="lunes">
       <ion-item slot="header" color="light">
         <ion-label>Lunes</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <ion-grid>
-          <ion-row>
-            <ion-col size="12" size-sm>
-              <div>Ingenieria en informatica</div>
-            </ion-col>
-            <ion-col size="12" size-sm>
-              <div>2 of 4</div>
-            </ion-col>
-            <ion-col size="12" size-sm>
-              <div>3 of 4</div>
-            </ion-col>
-            <ion-col size="12" size-sm>
-              <div>4 of 4</div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <table>
+          <tr>
+            <th>Hora</th>
+            <th>Seccion</th>
+            <th>Asignatura</th>
+            <th>Registrar asistencia</th>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>01</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>02</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+        </table>
       </div>
     </ion-accordion>
     <ion-accordion value="martes">
@@ -55,7 +59,26 @@
         <ion-label>Martes</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        Second Content
+        <table>
+          <tr>
+            <th>Hora</th>
+            <th>Seccion</th>
+            <th>Asignatura</th>
+            <th>Registrar asistencia</th>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>01</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>02</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+        </table>
       </div>
     </ion-accordion>
     <ion-accordion value="miercoles">
@@ -63,7 +86,25 @@
         <ion-label>Miercoles</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        Third Content
+        <table>
+          <tr>
+            <th>Hora</th>
+            <th>Seccion</th>
+            <th>Asignatura</th>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>01</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>02</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+        </table>
       </div>
     </ion-accordion>
     <ion-accordion value="jueves">
@@ -71,7 +112,26 @@
         <ion-label>Jueves</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        Third Content
+        <table>
+          <tr>
+            <th>Hora</th>
+            <th>Seccion</th>
+            <th>Asignatura</th>
+            <th>Registrar asistencia</th>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>01</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>02</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+        </table>
       </div>
     </ion-accordion>
     <ion-accordion value="viernes">
@@ -79,7 +139,25 @@
         <ion-label>Viernes</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        Third Content
+        <table>
+          <tr>
+            <th>Hora</th>
+            <th>Seccion</th>
+            <th>Asignatura</th>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>01</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>02</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+        </table>
       </div>
     </ion-accordion>
 
@@ -88,7 +166,26 @@
         <ion-label>Sabado</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        Third Content
+        <table>
+          <tr>
+            <th>Hora</th>
+            <th>Seccion</th>
+            <th>Asignatura</th>
+            <th>Registrar asistencia</th>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>01</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+          <tr>
+            <td>08:30</td>
+            <td>02</td>
+            <td>Desarrollo de aplicaciones moviles</td>
+            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
+          </tr>
+        </table>
       </div>
     </ion-accordion>
     

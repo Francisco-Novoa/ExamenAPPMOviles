@@ -24,6 +24,11 @@ const routes: Routes = [
     path: 'docente',
     loadChildren: () => import('./docente/docente.module').then( m => m.DocentePageModule)
   },
+  {
+    path: 'qrcode',
+    loadChildren: () => import('./qrcode/qrcode.module').then( m => m.QrcodePageModule)
+  },
+
 
 ];
 
