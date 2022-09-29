@@ -28,6 +28,12 @@ const routes: Routes = [
     path: 'qrcode',
     loadChildren: () => import('./qrcode/qrcode.module').then( m => m.QrcodePageModule)
   },
+  {
+    path: '**',
+    loadChildren: () => import('./error404/error404.module').then( m => m.Error404PageModule),
+
+  },
+
 
 
 ];

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertController, NavController, AnimationController, createAnimation } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
 import { users } from "./users.js"
+import { AuthenticationService } from '../service/authentication.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,7 +14,8 @@ export class LoginPage {
   constructor(private navCtrl: NavController,
     private router: Router,
     private alertController: AlertController,
-    private animationCtrl: AnimationController) {
+    private animationCtrl: AnimationController,
+    private authService: AuthenticationService) {
   }
 
   isUsuario = false
@@ -25,9 +27,10 @@ export class LoginPage {
   });
 
   sendDetailsWithState() {
-    this.isUsuario = !!users[this?.usuario?.value?.user || ""]
-    this.isValid = this.isUsuario ? users[this?.usuario?.value?.user || ""]?.pass === this?.usuario?.value?.pass : false
-    this.isProfe = users[this?.usuario?.value?.user || ""]?.type === "docente"
+    const user = this?.usuario?.value?.user || ""
+    this.isUsuario = !!users[user]
+    this.isValid = this.isUsuario ? users[user]?.pass === this?.usuario?.value?.pass : false
+    this.isProfe = users[user]?.type === "docente"
 
     let navigationExtras: NavigationExtras = {
       state: {
