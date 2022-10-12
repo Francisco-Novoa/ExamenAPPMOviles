@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertController, NavController, AnimationController, createAnimation } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
 import { ActivatedRoute } from "@angular/router";
-
+import { ConsumoAPIService } from '../service/consumo-api.service';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +14,10 @@ export class HomePage {
   nombre: string;
   userHome = "Alumno Duoc";
   isProfe = false;
+  message = '';
   emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
-  constructor(private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
+
+  constructor(private consumoApi:ConsumoAPIService, private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
     this.activeroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.userHome = this.router.getCurrentNavigation().extras.state.user;
@@ -51,4 +53,11 @@ export class HomePage {
     animation.play();
     this.router.navigate(['/login'])
   }
+
+Mostrar(){
+  return this.consumoApi.getPosts().then((poke)=> {
+    return poke
+  })}
+
+
 }
