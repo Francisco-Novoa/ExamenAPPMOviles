@@ -59,5 +59,8 @@ Mostrar(){
     return poke
   })}
 
+goHome(){
+  
+}
 
 }
