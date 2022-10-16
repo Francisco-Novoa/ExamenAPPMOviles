@@ -59,8 +59,9 @@ Mostrar(){
     return poke
   })}
 
-goHome(){
-  
-}
+  toQrcode() {
+
+    this.router.navigate(['/qrcode']); // Esta linea es la que me permite navegar a otro page 
+  }
 
 }

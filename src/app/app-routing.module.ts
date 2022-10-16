@@ -32,7 +32,11 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./error404/error404.module').then( m => m.Error404PageModule),
 
+  },  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
+
 
 
 
