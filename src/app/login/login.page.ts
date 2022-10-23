@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertController, NavController, AnimationController, createAnimation } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
-import { users } from "./users.js"
+import { UserService } from '../api/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,6 +13,7 @@ export class LoginPage {
   constructor(private navCtrl: NavController,
     private router: Router,
     private alertController: AlertController,
+    private UserService: UserService,
     private animationCtrl: AnimationController) {
   }
 
@@ -25,17 +26,15 @@ export class LoginPage {
   });
 
   sendDetailsWithState() {
-    this.isUsuario = !!users[this?.usuario?.value?.user || ""]
-    this.isValid = this.isUsuario ? users[this?.usuario?.value?.user || ""]?.pass === this?.usuario?.value?.pass : false
-    this.isProfe = users[this?.usuario?.value?.user || ""]?.type === "docente"
-
+    this.isUsuario = this.UserService.userExists({ user: this.usuario?.value?.user || "" })
+    this.isValid = this.UserService.validate({ user: this.usuario?.value?.user || "", pass: this.usuario?.value?.pass || "" })
+    this.isProfe = this.UserService.isProfe({ user: this.usuario?.value?.user || "" })
     let navigationExtras: NavigationExtras = {
       state: {
         user: this.usuario.value.user || "",
         isProfe: this.isProfe
       }
     };
-    console.log(this.isProfe)
     if (this.isProfe) {
       console.log("to the profe page")
       this.router.navigate(['/docente'], navigationExtras);
