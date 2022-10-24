@@ -15,6 +15,7 @@ export class HomePage {
   userHome = "Alumno Duoc";
   isProfe = false;
   emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
+
   constructor(private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
     this.activeroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
@@ -22,7 +23,6 @@ export class HomePage {
         this.isProfe = this.router.getCurrentNavigation().extras.state.isProfe;
         this.emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
       }
-      console.log(this.isProfe, this.userHome, this.emailUser)
     });
   }
 

@@ -5,12 +5,9 @@
 </ion-header>
 
 <ion-content>
-
   <ion-card class="ion-text-center">
     <h2>Buenas tardes {{userHome}} </h2>
   </ion-card>
-
-  
   <ion-card class="ion-text-center">
     <ion-card-content id="perfil">
       <ion-card-title>Perfil</ion-card-title>
@@ -24,174 +21,210 @@
       </div>
     </ion-card-content>
   </ion-card>
-  
-<ion-card>
-  <ion-accordion-group expand="inset" [multiple]="true">
-    <ion-accordion value="lunes">
-      <ion-item slot="header" color="light">
-        <ion-label>Lunes</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        <table>
-          <tr>
-            <th>Hora</th>
-            <th>Seccion</th>
-            <th>Asignatura</th>
-            <th>Registrar asistencia</th>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>01</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>02</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-        </table>
-      </div>
-    </ion-accordion>
-    <ion-accordion value="martes">
-      <ion-item slot="header" color="light">
-        <ion-label>Martes</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        <table>
-          <tr>
-            <th>Hora</th>
-            <th>Seccion</th>
-            <th>Asignatura</th>
-            <th>Registrar asistencia</th>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>01</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>02</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-        </table>
-      </div>
-    </ion-accordion>
-    <ion-accordion value="miercoles">
-      <ion-item slot="header" color="light">
-        <ion-label>Miercoles</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        <table>
-          <tr>
-            <th>Hora</th>
-            <th>Seccion</th>
-            <th>Asignatura</th>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>01</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>02</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-        </table>
-      </div>
-    </ion-accordion>
-    <ion-accordion value="jueves">
-      <ion-item slot="header" color="light">
-        <ion-label>Jueves</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        <table>
-          <tr>
-            <th>Hora</th>
-            <th>Seccion</th>
-            <th>Asignatura</th>
-            <th>Registrar asistencia</th>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>01</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>02</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-        </table>
-      </div>
-    </ion-accordion>
-    <ion-accordion value="viernes">
-      <ion-item slot="header" color="light">
-        <ion-label>Viernes</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        <table>
-          <tr>
-            <th>Hora</th>
-            <th>Seccion</th>
-            <th>Asignatura</th>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>01</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>02</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-        </table>
-      </div>
-    </ion-accordion>
 
-    <ion-accordion value="sabado">
-      <ion-item slot="header" color="light">
-        <ion-label>Sabado</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        <table>
-          <tr>
-            <th>Hora</th>
-            <th>Seccion</th>
-            <th>Asignatura</th>
-            <th>Registrar asistencia</th>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>01</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-          <tr>
-            <td>08:30</td>
-            <td>02</td>
-            <td>Desarrollo de aplicaciones moviles</td>
-            <td><ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia</ion-button></td>
-          </tr>
-        </table>
-      </div>
-    </ion-accordion>
-    
-  </ion-accordion-group>
-</ion-card>
-    
+  <ion-card>
+    <ion-accordion-group expand="inset" [multiple]="true">
+      <ion-accordion value="lunes">
+        <ion-item slot="header" color="light">
+          <ion-label>Lunes</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <table>
+            <tr>
+              <th>Hora</th>
+              <th>Seccion</th>
+              <th>Asignatura</th>
+              <th>Registrar asistencia</th>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>01</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>02</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="martes">
+        <ion-item slot="header" color="light">
+          <ion-label>Martes</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <table>
+            <tr>
+              <th>Hora</th>
+              <th>Seccion</th>
+              <th>Asignatura</th>
+              <th>Registrar asistencia</th>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>01</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>02</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="miercoles">
+        <ion-item slot="header" color="light">
+          <ion-label>Miercoles</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <table>
+            <tr>
+              <th>Hora</th>
+              <th>Seccion</th>
+              <th>Asignatura</th>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>01</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>02</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="jueves">
+        <ion-item slot="header" color="light">
+          <ion-label>Jueves</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <table>
+            <tr>
+              <th>Hora</th>
+              <th>Seccion</th>
+              <th>Asignatura</th>
+              <th>Registrar asistencia</th>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>01</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>02</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="viernes">
+        <ion-item slot="header" color="light">
+          <ion-label>Viernes</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <table>
+            <tr>
+              <th>Hora</th>
+              <th>Seccion</th>
+              <th>Asignatura</th>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>01</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>02</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="sabado">
+        <ion-item slot="header" color="light">
+          <ion-label>Sabado</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <table>
+            <tr>
+              <th>Hora</th>
+              <th>Seccion</th>
+              <th>Asignatura</th>
+              <th>Registrar asistencia</th>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>01</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td>08:30</td>
+              <td>02</td>
+              <td>Desarrollo de aplicaciones moviles</td>
+              <td>
+                <ion-button fill="outline" size="small" (click)="toQrcode()" expand="block">Registrar asistencia
+                </ion-button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-accordion>
+
+    </ion-accordion-group>
+  </ion-card>
+
 
 
   <ion-card class="ion-text-center">

@@ -36,7 +36,6 @@ export class LoginPage {
       }
     };
     if (this.isProfe) {
-      console.log("to the profe page")
       this.router.navigate(['/docente'], navigationExtras);
     } else {
       this.router.navigate(['/home'], navigationExtras);
@@ -44,7 +43,6 @@ export class LoginPage {
   }
 
   toChangePass() {
-
     this.router.navigate(['/no-pass']); // Esta linea es la que me permite navegar a otro page 
   }
 
