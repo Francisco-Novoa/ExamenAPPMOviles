@@ -5,6 +5,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { ActivatedRoute } from "@angular/router";
 import { MenuController } from "@ionic/angular";
 import { RecursosAlumnoPage } from '../recursos-alumno/recursos-alumno.page';
+import { UserService } from '../api/user.service';
 
 
 
@@ -20,7 +21,7 @@ export class HomePage {
   isProfe = false;
   emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
 
-  constructor(public navController: NavController, private menuCtrl: MenuController, private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
+  constructor(private UserService: UserService, public navController: NavController, private menuCtrl: MenuController, private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
     this.activeroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.userHome = this.router.getCurrentNavigation().extras.state.user;
@@ -55,16 +56,8 @@ export class HomePage {
     animation.play();
   }
 
-  cerrarAnimation() {
-    const animation = createAnimation()
-      .addElement(document.querySelector('#cuadrado2'))
-      .duration(1000)
-      .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-      .fromTo('opacity', '1', '0.2')
-      .duration(1000)
-      .fromTo('transform', 'translateX(100px)', 'translateX(0px)')
-      .fromTo('opacity', '0.2', '1');
-    animation.play();
+  logOut() {
+    this.UserService.logout()
     this.router.navigate(['/login'])
   }
 }

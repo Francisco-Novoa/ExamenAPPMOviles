@@ -9,6 +9,8 @@ export class UserService {
   public userExists = ({ user }): boolean => (user ? !!users[user] : false)
   public validate = ({ user, pass }): boolean => {
     this.isLogedIn = user ? users[user]?.pass === pass : false
+    console.log(user ? users[user]?.pass === pass : false)
+    console.log(user, pass, users)
     return this.isLogedIn
   }
   public isProfe = ({ user }): boolean => user ? users[user]?.type === "docente" : false
