@@ -4,6 +4,9 @@ import { AlertController, NavController, AnimationController, createAnimation } 
 import { Router, NavigationExtras } from '@angular/router';
 import { ActivatedRoute } from "@angular/router";
 import { MenuController } from "@ionic/angular";
+import { RecursosAlumnoPage } from '../recursos-alumno/recursos-alumno.page';
+
+
 
 @Component({
   selector: 'app-home',
@@ -16,7 +19,8 @@ export class HomePage {
   userHome = "Alumno Duoc";
   isProfe = false;
   emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
-  constructor(private menuCtrl: MenuController, private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
+
+  constructor(public navController: NavController, private menuCtrl: MenuController, private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
     this.activeroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.userHome = this.router.getCurrentNavigation().extras.state.user;
@@ -32,6 +36,10 @@ export class HomePage {
 
   toggleMenu() {
     this.menuCtrl.toggle();
+  }
+
+  aRecursos() {
+    this.router.navigate(['/recursos-alumno']);
   }
 
   camaraAnimation() {

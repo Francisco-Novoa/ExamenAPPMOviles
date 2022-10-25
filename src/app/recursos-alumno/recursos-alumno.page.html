@@ -1,10 +1,13 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
     <ion-title>Recursos del alumno</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
   <ion-list>
     <ion-accordion-group *ngFor="let pokemon of pokemon" #accordionGroup>
       <ion-accordion value="first">
@@ -15,7 +18,20 @@
           </ion-avatar>
         </ion-item>
         <div class="ion-padding" slot="content">
-          First Content
+          <ion-grid>
+            <ion-subtitle>Base Stats</ion-subtitle>
+            <ion-row>
+  
+              <ion-col>HP: {{pokemon.stats.hp.base_stat}}</ion-col>
+              <ion-col>Attack: {{pokemon.stats.attack.base_stat}}</ion-col>
+              <ion-col>Defense: {{pokemon.stats.defense.base_stat}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>S.A: {{pokemon.stats.specialAttack.base_stat}}</ion-col>
+              <ion-col>S.D: {{pokemon.stats.specialDefense.base_stat}}</ion-col>
+              <ion-col>Speed: {{pokemon.stats.speed.base_stat}}</ion-col>
+            </ion-row>
+          </ion-grid>
         </div>
       </ion-accordion>
     </ion-accordion-group>

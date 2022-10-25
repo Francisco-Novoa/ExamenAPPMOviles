@@ -20,13 +20,20 @@ export class RecursosAlumnoPage implements OnInit {
         console.log(hp, attack, defense, specialAttack, specialDefense, speed)
         this.pokemon.push({
           nombre: [name[0].toUpperCase(), ...name.split("").slice(1, name.length)].join(""),
-          sprite: front_default
+          sprite: front_default,
+          stats: {hp, attack, defense, specialAttack, specialDefense, speed}
         })
       })
     })
+    this.pokemon.sort((a,b) => {
+        if(a.id>b.id){
+          return 1
+        }else if (a.id<b.id){
+          return -1
+        }else
+          return 0
+    })
   };
 
-  getId(id) {
 
-  }
 }

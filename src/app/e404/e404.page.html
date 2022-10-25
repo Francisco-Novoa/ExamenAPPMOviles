@@ -1,13 +1,12 @@
 <ion-header>
   <ion-toolbar id="titulo">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
      Pagina no encontrada
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <ion-img src="assets/images/missingno.png"></ion-img>
-  <ion-button routerLink="/login" expand="block" class="ion-margin-top">
-    <ion-icon  name="home" slot="start"></ion-icon>
-    Volver al inicio
-  </ion-button>
 </ion-content>
