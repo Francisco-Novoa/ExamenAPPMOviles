@@ -6,18 +6,18 @@
 
 <ion-content>
   <ion-list>
-    <ion-accordion-group #accordionGroup>
-    <ion-accordion value="first">
-      <ion-item *ngFor="let pokemon of pokemon" slot="header" color="light">
-        <ion-label>{{pokemon.name}}</ion-label>
-        <ion-avatar slot="start">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="">
-        </ion-avatar>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        First Content
-      </div>
-    </ion-accordion>
-  </ion-accordion-group>
+    <ion-accordion-group *ngFor="let pokemon of pokemon" #accordionGroup>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>{{pokemon.nombre}}</ion-label>
+          <ion-avatar slot="start">
+            <img src={{pokemon.sprite}} alt="">
+          </ion-avatar>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          First Content
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
   </ion-list>
 </ion-content>
