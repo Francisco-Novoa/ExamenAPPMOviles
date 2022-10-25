@@ -9,10 +9,32 @@
     <ion-card-content id="perfil">
       <ion-card-title>Sistema de registro de asignaturas</ion-card-title>
       <div class="names">
-        <ion-card-subtitle> <strong>Asignatura:</strong>  Programacion de aplicaciones moviles</ion-card-subtitle>
-        <ion-card-subtitle> <strong>Seccion:</strong>  01</ion-card-subtitle>
-          <img src="assets/images/qrtest.png" alt="qrcodetemporal">
+        <ion-card-subtitle> <strong>Asignatura:</strong> Programacion de aplicaciones moviles</ion-card-subtitle>
+        <ion-card-subtitle> <strong>Seccion:</strong> 01</ion-card-subtitle>
       </div>
     </ion-card-content>
   </ion-card>
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data={{qr}}&amp;size=500x500" alt="Pokemon del dia" />
+
+    </ion-card-content>
+
+
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Listado de alumnos</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let alumno of alumnos">
+      <ion-avatar slot="start">
+        <img src="{{alumno[1]}}" alt="">
+      </ion-avatar>
+      <ion-label>
+        {{alumno[0]}}
+      </ion-label>
+      <ion-icon name="person-sharp" color={{alumno[2]}} slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
 </ion-content>
