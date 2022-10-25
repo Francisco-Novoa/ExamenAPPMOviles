@@ -70,17 +70,13 @@ const routes: Routes = [
     loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundPageModule)
   },
   {
-    path: 'e404',
-    loadChildren: () => import('./e404/e404.module').then(m => m.E404PageModule)
-  },
-  {
     path: 'recursos-alumno',
     loadChildren: () => import('./recursos-alumno/recursos-alumno.module').then(m => m.RecursosAlumnoPageModule)
   },
-
-
-
-
+  {
+    path: 'e404',
+    loadChildren: () => import('./e404/e404.module').then(m => m.E404PageModule)
+  },
 
 ];
 

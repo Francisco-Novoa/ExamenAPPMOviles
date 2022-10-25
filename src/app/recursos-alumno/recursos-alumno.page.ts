@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecursosAlumnoPage implements OnInit {
 
-  constructor() { }
+  pokemon =[]
+
+  
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-  }
+    this.http.get<any>('https://pokeapi.co/api/v2/pokemon').subscribe(res => {
+      console.log(res);
+      this.pokemon = res.results;
+    })
+  };
 
+  getId(id){
+
+  }
 }
