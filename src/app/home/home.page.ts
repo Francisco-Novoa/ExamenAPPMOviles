@@ -39,7 +39,7 @@ export class HomePage {
   }
 
   aRecursos() {
-    this.router.navigate(['/recursos-alumno']);
+    this.router.navigate(['/recursos']);
   }
 
   camaraAnimation() {

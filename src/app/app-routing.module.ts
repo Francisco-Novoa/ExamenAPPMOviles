@@ -27,14 +27,17 @@ const routes: Routes = [
     canActivate: [AuthService]
   },
   {
-    path: 'recursos-alumno',
+    path: 'recursos',
     loadChildren: () => import('./recursos-alumno/recursos-alumno.module').then(m => m.RecursosAlumnoPageModule)
+  },
+  {
+    path: '404',
+    loadChildren: () => import('./e404/e404.module').then(m => m.E404PageModule)
   },
   {
     path: '**',
     loadChildren: () => import('./e404/e404.module').then(m => m.E404PageModule)
-  },
-
+  }
 
 ];
 
