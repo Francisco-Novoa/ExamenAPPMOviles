@@ -3,45 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    canActivate: [AuthService]
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'docente',
-    redirectTo: 'docente',
-    pathMatch: 'full'
-  },
-  //HOME = ESTUDIANTE
-  {
-    path: 'home',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'recursos-alumno',
-    redirectTo: 'recursos-alumno',
-    pathMatch: 'full'
-  },
-
-  {
-    path: '**',
-    redirectTo: 'e404',
-    pathMatch: 'full'
-  },
-
   // Estos cargan la pagina
   {
     path: 'home',
@@ -66,17 +27,14 @@ const routes: Routes = [
     canActivate: [AuthService]
   },
   {
-    path: '**',
-    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundPageModule)
-  },
-  {
     path: 'recursos-alumno',
     loadChildren: () => import('./recursos-alumno/recursos-alumno.module').then(m => m.RecursosAlumnoPageModule)
   },
   {
-    path: 'e404',
+    path: '**',
     loadChildren: () => import('./e404/e404.module').then(m => m.E404PageModule)
   },
+
 
 ];
 
