@@ -7,7 +7,7 @@ export const users = {
         pass: "12345678",
         type: "docente"
     },
-    "alummo1@duocuc.cl": {
+    "alumno1@duocuc.cl": {
         pass: "12345678",
         type: "alumno"
     },

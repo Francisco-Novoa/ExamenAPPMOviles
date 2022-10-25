@@ -1,10 +1,14 @@
 <ion-header class="blue">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title id="titulo">Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
   <ion-card class="ion-text-center">
     <h2>Buenas tardes {{userHome}} </h2>
   </ion-card>
@@ -18,7 +22,7 @@
       </div>
       <div class="names">
         <ion-card-subtitle>Correo:</ion-card-subtitle>
-        <ion-card-subtitle>{{emailUser}}@duocuc.cl</ion-card-subtitle>
+        <ion-card-subtitle>{{emailUser}}</ion-card-subtitle>
       </div>
       <div class="names">
         <ion-card-subtitle>Carrera:</ion-card-subtitle>
@@ -27,39 +31,33 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card class="ion-text-center">
-    <ion-card-content>
-      <ion-card-title>Registra tu asistencia</ion-card-title>
-      <div id="camara">
-        <ion-button expand="full" type="submit" (click)="camaraAnimation()">
-          <div class="square" id="cuadrado" (click)="cuadradoAnimado()">
-            <ion-icon name="camera-outline" style="font-size: 50px;"></ion-icon>
-          </div>
-        </ion-button>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="asistencia">
+        <ion-icon name="camera-outline"></ion-icon>
+        <ion-label>Asistencia</ion-label>
 
-  <ion-card class="ion-text-center">
-    <ion-card-content>
-      <ion-card-title>Cerrar Cesión</ion-card-title>
-      <div id="cerrarsesion">
-        <ion-button expand="full" type="submit" (click)="cerrarAnimation()">
-          <div class="square2" id="cuadrado2" (click)="cuadradoAnimado()">
-            <ion-icon name="log-out-outline" style="font-size: 50px;"></ion-icon>
-          </div>
-        </ion-button>
-      </div>
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+      </ion-tab-button>
 
-<ion-footer class="ion-text-center" collapse="fade">
-  <ion-toolbar>
-    <ion-title size="small">
-      <ion-icon name="logo-linkedin"></ion-icon>
-      <ion-icon name="logo-instagram"></ion-icon>
-      <ion-label> @DuocUC</ion-label>
-    </ion-title>
-  </ion-toolbar>
-</ion-footer>
+      <ion-tab-button (click)="aRecursos()">
+        <ion-icon name="school-outline"></ion-icon>
+        <ion-label>Recursos</ion-label>
+        <ion-badge></ion-badge>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="logOut()">
+        <ion-icon name="log-out-outline"></ion-icon>
+        <ion-label>Salir</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  <ion-footer class="ion-text-center" collapse="fade">
+    <ion-toolbar>
+      <ion-title size="small">
+        <ion-icon name="logo-linkedin"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-label> @DuocUC</ion-label>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>

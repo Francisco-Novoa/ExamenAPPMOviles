@@ -11,7 +11,7 @@ export class AuthService {
   constructor(public userService: UserService, private router: Router) { }
   canActivate(): boolean {
     if (!this.userService.isLogedIn) {
-      this.router.navigate(['login']);
+      this.router.navigate(['']);
       return false;
     }
     return true;

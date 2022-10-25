@@ -3,20 +3,15 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // Estos cargan la pagina
+  {
+    path: '',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+  },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
     canActivate: [AuthService]
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'no-pass',
@@ -33,10 +28,17 @@ const routes: Routes = [
     canActivate: [AuthService]
   },
   {
-    path: '**',
-    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundPageModule)
+    path: 'recursos',
+    loadChildren: () => import('./recursos-alumno/recursos-alumno.module').then(m => m.RecursosAlumnoPageModule)
   },
-
+  {
+    path: '404',
+    loadChildren: () => import('./e404/e404.module').then(m => m.E404PageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./e404/e404.module').then(m => m.E404PageModule)
+  }
 
 ];
 
