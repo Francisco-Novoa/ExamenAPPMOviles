@@ -15,9 +15,7 @@ export class DocentePage implements OnInit {
   ngOnInit() {
   }
 
-  cerrarCesion(){
 
-  }
 
 
   cerrarAnimation() {
