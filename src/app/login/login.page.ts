@@ -35,7 +35,7 @@ export class LoginPage {
         isProfe: this.isProfe
       }
     };
-    if (this.UserService.isProfe) {
+    if (this.UserService.isProfe({ user: this.usuario.value.user })) {
       this.router.navigate(['/docente'], navigationExtras);
     } else {
       this.router.navigate(['/home'], navigationExtras);

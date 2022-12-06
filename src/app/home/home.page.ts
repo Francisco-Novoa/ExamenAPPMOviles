@@ -4,9 +4,8 @@ import { AlertController, NavController, AnimationController, createAnimation } 
 import { Router, NavigationExtras } from '@angular/router';
 import { ActivatedRoute } from "@angular/router";
 import { MenuController } from "@ionic/angular";
-import { RecursosAlumnoPage } from '../recursos-alumno/recursos-alumno.page';
 import { UserService } from '../api/user.service';
-
+import { PhotoService } from '../services/photo.service';
 
 
 @Component({
@@ -21,7 +20,13 @@ export class HomePage {
   isProfe = false;
   emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
 
-  constructor(private UserService: UserService, public navController: NavController, private menuCtrl: MenuController, private activeroute: ActivatedRoute, private router: Router, private alertController: AlertController) {
+  constructor(
+    public photoService: PhotoService,
+    private UserService: UserService,
+    public navController: NavController,
+    private menuCtrl: MenuController,
+    private activeroute: ActivatedRoute,
+    private router: Router) {
     this.activeroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.userHome = this.router.getCurrentNavigation().extras.state.user;
@@ -29,8 +34,13 @@ export class HomePage {
         this.emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
       }
     });
-
   }
+
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
+
   ngOnInit() {
 
   }

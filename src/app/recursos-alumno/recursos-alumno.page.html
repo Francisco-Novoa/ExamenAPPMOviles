@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <ion-list>
     <ion-accordion-group *ngFor="let pokemon of pokemon" #accordionGroup>
       <ion-accordion value="first">
@@ -19,9 +19,9 @@
         </ion-item>
         <div class="ion-padding" slot="content">
           <ion-grid>
-            <ion-subtitle>Base Stats</ion-subtitle>
+            <ion-title>Base Stats</ion-title>
             <ion-row>
-  
+
               <ion-col>HP: {{pokemon.stats.hp.base_stat}}</ion-col>
               <ion-col>Attack: {{pokemon.stats.attack.base_stat}}</ion-col>
               <ion-col>Defense: {{pokemon.stats.defense.base_stat}}</ion-col>

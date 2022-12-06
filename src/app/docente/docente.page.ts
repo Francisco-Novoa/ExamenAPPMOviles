@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras} from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
+import { ActivatedRoute } from "@angular/router";
 import { AlertController, NavController, AnimationController, createAnimation } from '@ionic/angular';
 import { UserService } from '../api/user.service';
 @Component({
@@ -9,14 +10,24 @@ import { UserService } from '../api/user.service';
 })
 export class DocentePage implements OnInit {
 
-  constructor(private router: Router,
-              private UserService: UserService) { }
+  nombre: string;
+  userHome = "Profe Duoc";
+  isProfe = false;
+  emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
 
-  ngOnInit() {
+  constructor(private router: Router,
+    private UserService: UserService,
+    private activeroute: ActivatedRoute,) {
+    this.activeroute.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.userHome = this.router.getCurrentNavigation().extras.state.user;
+        this.isProfe = this.router.getCurrentNavigation().extras.state.isProfe;
+        this.emailUser = this.userHome.split("").map(a => a != " " ? a.toLowerCase() : "").join("");
+      }
+    });
   }
 
-  cerrarCesion(){
-
+  ngOnInit() {
   }
 
 
@@ -34,7 +45,6 @@ export class DocentePage implements OnInit {
     this.router.navigate(['/login'])
   }
   toQrcode() {
-
     this.router.navigate(['/qrcode']); // Esta linea es la que me permite navegar a otro page 
   }
 

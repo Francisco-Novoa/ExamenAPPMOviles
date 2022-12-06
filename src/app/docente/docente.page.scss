@@ -1,4 +1,11 @@
-table, th, td {
-    border: 2px solid white;
-    text-align: center;
-  }
+table,
+th,
+td {
+  border: 2px solid white;
+  text-align: center;
+}
+
+.names {
+  display: flex;
+  justify-content: space-between;
+}
